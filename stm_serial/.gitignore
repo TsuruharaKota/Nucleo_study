@@ -1,2 +1,3 @@
-stm_serial/**
-!stm_serial/*.cpp
+*
+!*/
+!*.*
