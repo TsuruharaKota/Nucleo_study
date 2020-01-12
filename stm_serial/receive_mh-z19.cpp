@@ -29,7 +29,7 @@ int main(){
 			for(int i = 0; i < 2; ++i){
 				uint8_t d = static_cast<uint8_t>(serial_read_byte(pi, serial_handle));
 				if(d == ESCAPE_BYTE){
-					byte[i] = static_cast<uint8_t>(serial_read_byte(pi, serial_handle));
+					byte[i] = static_cast<uint8_t>(serial_read_byte(pi, serial_handle)) ^ ESCAPE_MASK;
 				}else{
 					byte[i] = d;
 				}
