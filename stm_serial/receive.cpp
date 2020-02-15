@@ -16,11 +16,11 @@ int main(){
 		cout << "Serial Initialize Complete" << endl;
 	}
 	//set_mode(pi, 21, PI_OUTPUT);
-	int8_t got_data;
+	uint8_t got_data;
 	while(1){
 		//gpio_write(pi, 21, 1);
-		got_data = static_cast<int8_t>(serial_read_byte(pi, serial_handle));
-		cout << got_data << endl;
+		got_data = serial_read_byte(pi, serial_handle);
+		cout << (int)got_data << endl;
 	}
 	serial_close(pi, serial_handle);
 }
